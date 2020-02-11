@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
+import List from './Components/List/List';
 
 function App() {
   return (
     <Fragment>
-      <h1>To do list !</h1>
+      <List />
     </Fragment>
   );
 }
