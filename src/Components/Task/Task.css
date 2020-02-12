@@ -8,3 +8,15 @@
   background-color: #34495e;
   color: white;
 }
+
+.card:hover {
+  background-color: #455a6e;
+}
+
+.span-icon:hover {
+  cursor: pointer;
+}
+
+.done {
+  text-decoration: line-through;
+}

@@ -5,4 +5,11 @@
 
 .title {
   font-family: "Road_Rage";
+  color: #7ed6df;
+  font-size: 45px;
+}
+
+.btn-blue {
+  background-color: #3498db;
+  color: white;
 }

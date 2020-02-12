@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
 import Task from '../Task/Task'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUndo } from '@fortawesome/free-solid-svg-icons'
 
 const List = props => {
   return (
@@ -19,7 +21,10 @@ const List = props => {
       <button 
       className="btn btn-warning btn-block"
       onClick={props.onClear}
-      >Clear all</button>
+      >
+        Clear all
+        <FontAwesomeIcon className="icons mx-2" icon={faUndo} color="black" />
+      </button>
       :
       ""
       }

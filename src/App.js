@@ -25,7 +25,11 @@ export default class App extends Component {
     const newTask = {id, content}
     const updatedTasks = [...this.state.tasks, newTask];
 
-    this.setState({tasks: updatedTasks, content: ""})
+    this.setState({
+      tasks: updatedTasks,
+      content: "",
+      isEdited: false,
+    })
   }
 
   handleDelete = id => {
@@ -38,7 +42,11 @@ export default class App extends Component {
     const updatedTasks = [...this.state.tasks].filter(task => task.id !== id);
     const selectedTask = this.state.tasks.find(task => task.id === id);
 
-    this.setState({tasks: updatedTasks, content: selectedTask.content})
+    this.setState({
+      tasks: updatedTasks, 
+      content: selectedTask.content,
+      isEdited: true
+    })
   }
 
   handleClearAll = () => {
@@ -52,6 +60,7 @@ export default class App extends Component {
         content={this.state.content}
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
+        isEdited={this.state.isEdited}
         />
         <List
         tasks={this.state.tasks}
