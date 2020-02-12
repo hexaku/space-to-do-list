@@ -1,8 +1,8 @@
 import React from 'react'
+import './Task.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
-import './Task.css';
 
 const Task = props => {
   return (
