@@ -14,6 +14,15 @@ const List = props => {
           />
         )
       })}
+      {props.tasks.length !== 0
+      ? 
+      <button 
+      className="btn btn-warning btn-block"
+      onClick={props.onClear}
+      >Clear all</button>
+      :
+      ""
+      }
     </Fragment>
   )
 }

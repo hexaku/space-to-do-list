@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Road_Rage";
+  src: url('../../Road_Rage.otf');
+}
+
+.title {
+  font-family: "Road_Rage";
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 import uuid from 'uuid';
 import Form from './Components/Form/Form';
 import List from './Components/List/List';
@@ -40,6 +41,10 @@ export default class App extends Component {
     this.setState({tasks: updatedTasks, content: selectedTask.content})
   }
 
+  handleClearAll = () => {
+    this.setState({tasks: []})
+  }
+
   render(){
     return (
       <div className="container">
@@ -52,6 +57,7 @@ export default class App extends Component {
         tasks={this.state.tasks}
         onDelete={this.handleDelete}
         onEdit={this.handleEdit}
+        onClear={this.handleClearAll}
         />
       </div>
     );
