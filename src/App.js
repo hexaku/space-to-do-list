@@ -8,7 +8,7 @@ export default class App extends Component {
   state = {
     tasks: [],
     id: "",
-    content: "ok",
+    content: "",
     isEdited: false,
     selectedTask: {},
   }
@@ -24,7 +24,20 @@ export default class App extends Component {
     const newTask = {id, content}
     const updatedTasks = [...this.state.tasks, newTask];
 
+    this.setState({tasks: updatedTasks, content: ""})
+  }
+
+  handleDelete = id => {
+    const updatedTasks = [...this.state.tasks].filter(task => task.id !== id);
+
     this.setState({tasks: updatedTasks})
+  }
+
+  handleEdit = id => {
+    const updatedTasks = [...this.state.tasks].filter(task => task.id !== id);
+    const selectedTask = this.state.tasks.find(task => task.id === id);
+
+    this.setState({tasks: updatedTasks, content: selectedTask.content})
   }
 
   render(){
@@ -35,7 +48,11 @@ export default class App extends Component {
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
         />
-        <List tasks={this.state.tasks}/>
+        <List
+        tasks={this.state.tasks}
+        onDelete={this.handleDelete}
+        onEdit={this.handleEdit}
+        />
       </div>
     );
   }

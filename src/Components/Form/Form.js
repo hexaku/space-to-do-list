@@ -10,6 +10,7 @@ const Form = props => {
         placeholder="Add a new task !"
         value={content}
         onChange={onChange}
+        required
         />
         <button>Add !</button>
       </form>
